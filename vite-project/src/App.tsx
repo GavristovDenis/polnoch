@@ -4,7 +4,15 @@ import { Neverland } from "./pages/Neverland/Neverland";
 import { Mistake } from "./pages/Mistake/Mistake";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { Footer } from "./components/Footer";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
       <div>

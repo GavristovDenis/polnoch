@@ -22,12 +22,18 @@ export const TrackButton: FC<TrackButtonProps> = ({ url, linkTo, title }) => {
         <video autoPlay loop muted className="video_button">
           <source src={url} type="video/mp4" />
         </video>
-        <div
-          className="video_button_content"
-          style={{ opacity: hovered ? 1 : 0 }}
-        >
-          {title}
-        </div>
+        {window.screen.width < 1200 ? null : (
+          <div
+            className="video_button_content"
+            style={{ opacity: hovered ? 1 : 0 }}
+          >
+            <div className="hero-container">
+              <h2 className="hero glitch layers" data-text={title}>
+                <span>{title}</span>
+              </h2>
+            </div>
+          </div>
+        )}
       </Link>
     </div>
   );
