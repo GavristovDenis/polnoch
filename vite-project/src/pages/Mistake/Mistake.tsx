@@ -1,24 +1,52 @@
 import { VideoPlayer } from "../../components/VideoPlayer";
 import mistakeVideo from "../../assets/mistakeVideo.mp4";
 import { Button } from "../../components/Button";
+import mistakeGif from "../../assets/mistake.gif";
 export const Mistake = () => {
   return (
     <div className="track_page">
-      <div className="track_page_top_block">
-        <video autoPlay loop muted className="track_page_video">
-          <source src={mistakeVideo} type="video/mp4" />
-        </video>
-        <div className="track_info_and_play_button">
+      {window.screen.width < 700 ? (
+        <div className="track_page_top_block">
           <div className="track_page_track_info">
             <span className="track_page_track_name"> первая ошибка</span> <br />
             <br /> <span className="track_page_band_name">без обид</span>
           </div>
+          <img
+            src={mistakeGif}
+            alt="первая ошибка"
+            className="track_page_video"
+          />
+
           <Button to="https://band.link/bb_error" />
         </div>
-      </div>
+      ) : (
+        <div className="track_page_top_block">
+          {window.screen.width < 1100 ? (
+            <img
+              src={mistakeGif}
+              alt="первая ошибка"
+              className="track_page_video"
+            />
+          ) : (
+            <video autoPlay loop muted className="track_page_video">
+              <source src={mistakeVideo} type="video/mp4" />
+            </video>
+          )}
+
+          <div className="track_info_and_play_button">
+            <div className="track_page_track_info">
+              <span className="track_page_track_name"> первая ошибка</span>{" "}
+              <br />
+              <br /> <span className="track_page_band_name">без обид</span>
+            </div>
+            <Button to="https://band.link/bb_error" />
+          </div>
+        </div>
+      )}
+
       <div className="track_page_bottom_block">
         <div className="youtube_video">
-          <VideoPlayer id="TLGG92Dr1RSxdOEyMjA3MjAyNA" />
+          <VideoPlayer id="TLGG92Dr1RSxdOEzMTA3MjAyNA" />
         </div>
         <div className="track_text">
           … не уверен, что смог бы объяснить кому-то. уже сложно восстановить по

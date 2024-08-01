@@ -9,7 +9,7 @@ export const VideoPlayer: FC<VideoPlayerProps> = ({ id }) => {
   const opts = {
     width:
       window.screen.width <= 500
-        ? "400"
+        ? "319"
         : window.screen.width <= 1024
         ? "500"
         : "478",

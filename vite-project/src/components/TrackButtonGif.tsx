@@ -8,7 +8,11 @@ interface TrackButtonProps {
   title: string;
 }
 
-export const TrackButton: FC<TrackButtonProps> = ({ url, linkTo, title }) => {
+export const TrackButtonGif: FC<TrackButtonProps> = ({
+  url,
+  linkTo,
+  title,
+}) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -19,9 +23,7 @@ export const TrackButton: FC<TrackButtonProps> = ({ url, linkTo, title }) => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <video autoPlay loop muted controls={false} className="video_button">
-          <source src={url} type="video/mp4" />
-        </video>
+        <img src={url} alt={title} className="gif_button" />
         {window.screen.width < 1200 ? null : (
           <div
             className="video_button_content"

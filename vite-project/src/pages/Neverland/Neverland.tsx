@@ -1,24 +1,51 @@
 import { VideoPlayer } from "../../components/VideoPlayer";
 import neverlandVideo from "../../assets/neverlandVideo.mp4";
 import { Button } from "../../components/Button";
+import neverlandGif from "../../assets/never.gif";
 export const Neverland = () => {
   return (
     <div className="track_page">
-      <div className="track_page_top_block">
-        <video autoPlay loop muted className="track_page_video">
-          <source src={neverlandVideo} type="video/mp4" />
-        </video>
-        <div className="track_info_and_play_button">
+      {window.screen.width < 700 ? (
+        <div className="track_page_top_block">
           <div className="track_page_track_info">
-            <span className="track_page_track_name"> неверленд</span> <br />
+            <span className="track_page_track_name"> первая ошибка</span> <br />
             <br /> <span className="track_page_band_name">без обид</span>
           </div>
-          <Button to="https://band.link/nvrlnd" />
+          <img
+            src={neverlandGif}
+            alt="неверленд"
+            className="track_page_video"
+          />
+
+          <Button to="https://band.link/bb_error" />
         </div>
-      </div>
+      ) : (
+        <div className="track_page_top_block">
+          {window.screen.width < 1100 ? (
+            <img
+              src={neverlandGif}
+              alt="неверленд"
+              className="track_page_video"
+            />
+          ) : (
+            <video autoPlay loop muted className="track_page_video">
+              <source src={neverlandVideo} type="video/mp4" />
+            </video>
+          )}
+
+          <div className="track_info_and_play_button">
+            <div className="track_page_track_info">
+              <span className="track_page_track_name"> первая ошибка</span>{" "}
+              <br />
+              <br /> <span className="track_page_band_name">без обид</span>
+            </div>
+            <Button to="https://band.link/bb_error" />
+          </div>
+        </div>
+      )}
       <div className="track_page_bottom_block">
         <div className="youtube_video">
-          <VideoPlayer id="TLGGzcZsibIY4D0yMjA3MjAyNA" />
+          <VideoPlayer id="TLGGzcZsibIY4D0zMTA3MjAyNA" />
         </div>
         <div className="track_text">
           М

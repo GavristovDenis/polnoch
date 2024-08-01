@@ -2,7 +2,7 @@ import mainPageVideo from "../assets/mainPageVideo.mp4";
 const VideoBackground = () => {
   return (
     <div className="video-background">
-      <video autoPlay loop muted>
+      <video autoPlay loop muted controls={false}>
         <source src={mainPageVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
